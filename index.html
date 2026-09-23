@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASICS — Berkeley Accelerator & Startup Incubator in Cognitive Science</title>
+    <meta name="description" content="BASICS is Berkeley's founder-readiness course. Complete the campaign, pass the Ready Gate, and earn curated introductions to Berkeley's investor network.">
+    <meta name="keywords" content="BASICS, Berkeley, startup accelerator, incubator, cognitive science, UC Berkeley, COGSCI 198, founder, investor, pitch">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BASICS — Berkeley Accelerator & Startup Incubator in Cognitive Science">
+    <meta property="og:description" content="The course you finish before SkyDeck or YC — and the only intro network that won't let you email Berkeley investors until a human says you're ready.">
+    <meta property="og:url" content="https://basics.fyi">
+    <meta property="og:image" content="https://basics.fyi/images/hero.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://basics.fyi">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --berkeley-blue: #003262;
+            --cal-gold: #FDB515;
+            --dark-bg: #001a33;
+            --card-bg: #002244;
+            --text-primary: #ffffff;
+            --text-secondary: #b0c4de;
+            --accent: #FDB515;
+            --accent-hover: #ffcc44;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(0, 26, 51, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(253, 181, 21, 0.15);
+            padding: 0 2rem;
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px;
+        }
+        .nav-logo {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800; font-size: 1.3rem;
+            color: var(--cal-gold);
+            text-decoration: none; letter-spacing: 2px;
+        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--cal-gold); }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0,26,51,0.6) 0%, rgba(0,26,51,0.85) 60%, var(--dark-bg) 100%),
+                        url('./images/hero.png') center/cover no-repeat;
+            padding: 8rem 2rem 4rem;
+        }
+        .hero-content { max-width: 800px; }
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            letter-spacing: 6px;
+            color: var(--cal-gold);
+            margin-bottom: 1rem;
+        }
+        .hero .subtitle {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto; margin-right: auto;
+            opacity: 0.85;
+        }
+        .hero .campus {
+            font-size: 0.85rem;
+            color: var(--cal-gold);
+            opacity: 0.7;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        /* BUTTONS */
+        .btn-primary {
+            display: inline-block;
+            background: var(--cal-gold);
+            color: var(--berkeley-blue);
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 36px;
+            border: none; border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            letter-spacing: 0.5px;
+        }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(253,181,21,0.3); }
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--cal-gold);
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 28px;
+            border: 2px solid var(--cal-gold);
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover { background: rgba(253,181,21,0.1); }
+
+        /* SECTIONS */
+        section { padding: 6rem 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-label {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cal-gold);
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin-bottom: 3rem;
+        }
+
+        /* WHAT IS BASICS — 3 columns */
+        .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pillar {
+            background: var(--card-bg);
+            border: 1px solid rgba(253,181,21,0.1);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .pillar:hover { border-color: rgba(253,181,21,0.3); transform: translateY(-4px); }
+        .pillar-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .pillar h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.3rem; font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .pillar p { color: var(--text-secondary); font-size: 0.95rem; }
+
+        /* TIMELINE */
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before {
+            content: ''; position: absolute; left: 7px; top: 0; bottom: 0;
+            width: 2px; background: linear-gradient(180deg, var(--cal-gold), rgba(253,181,21,0.2));
+        }
+        .timeline-item {
+            position: relative; margin-bottom: 2rem; padding-left: 2rem;
+        }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -2rem; top: 6px;
+            width: 16px; height: 16px; border-radius: 50%;
+            background: var(--dark-bg); border: 3px solid var(--cal-gold);
+        }
+        .timeline-week {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.75rem; font-weight: 700;
+            color: var(--cal-gold);
+            letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+        .timeline-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.15rem; font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* PHOTO GRID */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.25rem;
+        }
+        .photo-card {
+            border-radius: 10px; overflow: hidden;
+            background: var(--card-bg);
+            border: 1px solid rgba(253,181,21,0.08);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .photo-card:hover { transform: translateY(-4px); border-color: rgba(253,181,21,0.25); }
+        .photo-card img {
+            width: 100%; height: 200px; object-fit: cover;
+            display: block;
+        }
+        .photo-card .caption {
+            padding: 1rem 1.25rem;
+            font-size: 0.9rem; color: var(--text-secondary);
+        }
+        .photo-card .caption strong { color: var(--text-primary); }
+
+        /* READY GATE */
+        .gate-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+        .gate-step {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid rgba(253,181,21,0.1);
+            position: relative;
+        }
+        .gate-step .step-num {
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem; font-weight: 800;
+            color: var(--cal-gold); opacity: 0.3;
+            margin-bottom: 0.5rem;
+        }
+        .gate-step h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.05rem; font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .gate-step p { font-size: 0.85rem; color: var(--text-secondary); }
+        .gate-quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--cal-gold);
+            text-align: center;
+            max-width: 700px;
+            margin: 2rem auto 0;
+            opacity: 0.85;
+        }
+
+        /* INVESTOR */
+        .investor-section {
+            background: linear-gradient(135deg, var(--berkeley-blue), #001a44);
+            border-radius: 16px;
+            padding: 4rem 3rem;
+            text-align: center;
+            border: 1px solid rgba(253,181,21,0.15);
+        }
+        .investor-promises {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 2rem; margin: 2rem 0;
+        }
+        .investor-promises .promise {
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.95rem; color: var(--text-secondary);
+        }
+        .promise-check { color: var(--cal-gold); font-size: 1.2rem; }
+
+        /* FAQ */
+        .faq-list { max-width: 700px; }
+        .faq-item {
+            border-bottom: 1px solid rgba(253,181,21,0.1);
+            padding: 1.5rem 0;
+        }
+        .faq-q {
+            font-family: 'Sora', sans-serif;
+            font-weight: 600; font-size: 1.05rem;
+            cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-q::after { content: '+'; font-size: 1.3rem; color: var(--cal-gold); transition: transform 0.2s; }
+        .faq-item.open .faq-q::after { transform: rotate(45deg); }
+        .faq-a {
+            color: var(--text-secondary); font-size: 0.95rem;
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s;
+        }
+        .faq-item.open .faq-a { max-height: 200px; padding-top: 1rem; }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid rgba(253,181,21,0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .footer-logo {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800; font-size: 1.1rem;
+            color: var(--cal-gold);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        footer p { color: var(--text-secondary); font-size: 0.85rem; }
+        .footer-links { margin: 1rem 0; }
+        .footer-links a {
+            color: var(--text-secondary); text-decoration: none;
+            margin: 0 1rem; font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--cal-gold); }
+
+        /* ANIMATIONS */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            section { padding: 4rem 1.25rem; }
+            .investor-section { padding: 2.5rem 1.5rem; }
+            .photo-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">BASICS</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#program">Program</a></li>
+            <li><a href="#sessions">Sessions</a></li>
+            <li><a href="#gate">Ready Gate</a></li>
+            <li><a href="#investors">Investors</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content reveal">
+        <p class="campus">UC Berkeley · COGSCI 198</p>
+        <h1>BASICS</h1>
+        <p class="subtitle">Berkeley Accelerator & Startup Incubator<br>in Cognitive Science</p>
+        <p class="tagline">The course you finish before SkyDeck or YC — and the only intro network that won't let you pitch Berkeley investors until a human says you're ready.</p>
+        <a href="#apply" class="btn-primary">Apply with Berkeley Email</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">What is BASICS</p>
+            <h2 class="section-title">Build. Ship. Get introduced.</h2>
+            <p class="section-desc">An 8-week campaign where founders learn by doing — not by watching. When staff says you're ready, you unlock warm introductions to Berkeley's investor network.</p>
+        </div>
+        <div class="pillars reveal">
+            <div class="pillar">
+                <div class="pillar-icon">📚</div>
+                <h3>Learn</h3>
+                <p>Cognitive science-informed pedagogy. Assignments are encounters. Semesters are campaigns. Failure is part of the curriculum — because that's how founders actually learn.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-icon">🛠️</div>
+                <h3>Build</h3>
+                <p>Ship a real product in 8 weeks. Customer discovery, MVP, data room, deck — every week has a deliverable. No theory without practice.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-icon">🚀</div>
+                <h3>Launch</h3>
+                <p>Pass the Ready Gate and earn curated introductions to Berkeley's 2,700+ investor network. Staff-approved. Double opt-in. No cold emails.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROGRAM -->
+<section id="program" style="background: rgba(0,50,98,0.3);">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">The Program</p>
+            <h2 class="section-title">8-week campaign</h2>
+            <p class="section-desc">Each week is an encounter. Complete them all and submit your evidence. Staff reviews your progress and decides when you're ready.</p>
+        </div>
+        <div class="timeline reveal">
+            <div class="timeline-item">
+                <div class="timeline-week">Week 1</div>
+                <div class="timeline-title">Problem & Team</div>
+                <div class="timeline-desc">Define the problem, your user, and why you're the one to solve it.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-week">Week 2</div>
+                <div class="timeline-title">Customer Discovery</div>
+                <div class="timeline-desc">5 real customer conversations. Notes, not hypotheticals.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-week">Week 3</div>
+                <div class="timeline-title">Productive Failure</div>
+                <div class="timeline-desc">Kill one idea. Document what you learned. This is the most important week.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-week">Week 4</div>
+                <div class="timeline-title">MVP in the Wild</div>
+                <div class="timeline-desc">Ship something. Link + one usage metric. It doesn't need to be perfect.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-week">Week 5</div>
+                <div class="timeline-title">Market & Wedge</div>
+                <div class="timeline-desc">TAM/SAM that isn't a slide lie. Where do you start, and why there?</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-week">Week 6</div>
+                <div class="timeline-title">Narrative & Deck</div>
+                <div class="timeline-desc">8 slides in the BASICS template. Story, not features.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-week">Week 7</div>
+                <div class="timeline-title">Data Room</div>
+                <div class="timeline-desc">Deck, one-pager, product link, metrics, team bios. Investor-ready.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-week">Week 8</div>
+                <div class="timeline-title">Boss Check</div>
+                <div class="timeline-desc">Staff review. If ready, the gate opens. If not, you iterate.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PAST SESSIONS -->
+<section id="sessions">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Past Sessions</p>
+            <h2 class="section-title">Real founders. Real speakers. Real work.</h2>
+            <p class="section-desc">BASICS brings in operators, investors, and technical founders who've built real companies.</p>
+        </div>
+        <div class="photo-grid reveal">
+            <div class="photo-card">
+                <img src="./images/farbod-lecture.png" alt="Farbod Mansorian guest lecture" loading="lazy">
+                <div class="caption"><strong>Farbod Mansorian</strong> — Founder & CEO, Unilingo. Guest lecture on building AI products.</div>
+            </div>
+            <div class="photo-card">
+                <img src="./images/tyler-talk.png" alt="Tyler guest speaker" loading="lazy">
+                <div class="caption"><strong>Tyler</strong> — Guest speaker on startup strategy and go-to-market.</div>
+            </div>
+            <div class="photo-card">
+                <img src="./images/oleksiy-talk.png" alt="Oleksiy guest speaker" loading="lazy">
+                <div class="caption"><strong>Oleksiy</strong> — Technical deep-dive on AI infrastructure.</div>
+            </div>
+            <div class="photo-card">
+                <img src="./images/tanay-demo.png" alt="Tanay demo day" loading="lazy">
+                <div class="caption"><strong>Tanay</strong> — Demo day presentation to investors and mentors.</div>
+            </div>
+            <div class="photo-card">
+                <img src="./images/gemini-class.png" alt="Gemini CLI class session" loading="lazy">
+                <div class="caption"><strong>Gemini CLI Workshop</strong> — Hands-on session with Google's AI tools.</div>
+            </div>
+            <div class="photo-card">
+                <img src="./images/leonard-basics.png" alt="Leonard teaching BASICS" loading="lazy">
+                <div class="caption"><strong>Leonard</strong> — BASICS instructor leading a campaign session.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- READY GATE -->
+<section id="gate" style="background: rgba(0,50,98,0.3);">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">The Ready Gate</p>
+            <h2 class="section-title">You can't pitch until we say you're ready.</h2>
+            <p class="section-desc">This isn't a directory. It's a gate. Staff reviews your work, your product, your data room. Only when you pass do you unlock introductions.</p>
+        </div>
+        <div class="gate-flow reveal">
+            <div class="gate-step">
+                <div class="step-num">01</div>
+                <h4>Complete</h4>
+                <p>Finish all 8 campaign encounters with real evidence.</p>
+            </div>
+            <div class="gate-step">
+                <div class="step-num">02</div>
+                <h4>Review</h4>
+                <p>Staff evaluates your submissions, product, and readiness.</p>
+            </div>
+            <div class="gate-step">
+                <div class="step-num">03</div>
+                <h4>Ready</h4>
+                <p>Staff flips the switch. Your data room opens to matched investors.</p>
+            </div>
+            <div class="gate-step">
+                <div class="step-num">04</div>
+                <h4>Introduce</h4>
+                <p>Warm, curated, double-opt-in intros. One at a time. Staff-approved.</p>
+            </div>
+        </div>
+        <p class="gate-quote reveal">"Not a list dump. Warm, curated, double-opt-in introductions to Berkeley's investor network."</p>
+    </div>
+</section>
+
+<!-- INVESTORS -->
+<section id="investors">
+    <div class="container">
+        <div class="investor-section reveal">
+            <p class="section-label">For Investors</p>
+            <h2 class="section-title">Your inbox, protected.</h2>
+            <p class="section-desc" style="max-width:600px;margin:0 auto 2rem;color:var(--text-secondary);">We built BASICS because founders were cold-emailing Berkeley investors 50 at a time. That stops here. Every introduction is staff-curated and double-opt-in.</p>
+            <div class="investor-promises">
+                <div class="promise"><span class="promise-check">✓</span> We never share your email with founders</div>
+                <div class="promise"><span class="promise-check">✓</span> Maximum one intro at a time</div>
+                <div class="promise"><span class="promise-check">✓</span> You control your availability</div>
+                <div class="promise"><span class="promise-check">✓</span> Every founder has passed the Ready Gate</div>
+            </div>
+            <a href="mailto:basics@berkeley.edu?subject=Investor%20Interest" class="btn-outline" style="margin-top:1.5rem;">Join as Investor</a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background: rgba(0,50,98,0.3);">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">FAQ</p>
+            <h2 class="section-title">Questions</h2>
+        </div>
+        <div class="faq-list reveal">
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Who can apply?</div>
+                <div class="faq-a">Current UC Berkeley students and recent alumni. Sign up with your @berkeley.edu email. Alumni who've lost access can request manual verification.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is it free?</div>
+                <div class="faq-a">Yes. BASICS is free for all Berkeley-affiliated founders. We don't take equity, fees, or carry.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long is the program?</div>
+                <div class="faq-a">8 weeks, one encounter per week. Each encounter has a deliverable. The pace is intense but designed around a student schedule.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the Ready Gate?</div>
+                <div class="faq-a">After completing all encounters, BASICS staff reviews your work. If your product, evidence, and data room meet the standard, you're marked "Ready" and unlock investor introductions. It's a human decision, not an algorithm.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need a company to apply?</div>
+                <div class="faq-a">No. Week 1 helps you define your problem and team. Many founders arrive with just an idea. The course is designed to take you from concept to investor-ready.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is this different from SkyDeck?</div>
+                <div class="faq-a">BASICS is earlier-stage. We're the readiness layer underneath SkyDeck and YC — the course you finish before applying to an accelerator. We're a feeder, not a competitor.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">BASICS</div>
+    <p>Berkeley Accelerator & Startup Incubator in Cognitive Science</p>
+    <p style="opacity:0.6;margin-top:0.25rem;">COGSCI 198 · UC Berkeley</p>
+    <div class="footer-links">
+        <a href="#apply">Apply</a>
+        <a href="#investors">For Investors</a>
+        <a href="#faq">FAQ</a>
+    </div>
+    <p style="margin-top:1.5rem;opacity:0.4;">© 2026 BASICS. All rights reserved.</p>
+</footer>
+
+<script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
