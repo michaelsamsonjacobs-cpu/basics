@@ -289,6 +289,53 @@
         }
         .promise-check { color: var(--cal-gold); font-size: 1.2rem; }
 
+        /* TEAM */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        .team-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(253,181,21,0.1);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .team-card:hover { border-color: rgba(253,181,21,0.3); transform: translateY(-4px); }
+        .team-avatar {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1.25rem;
+            background: linear-gradient(135deg, var(--berkeley-blue), #004080);
+            border: 3px solid var(--cal-gold);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem; font-weight: 800;
+            color: var(--cal-gold);
+        }
+        .team-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.2rem; font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .team-role {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.8rem; font-weight: 600;
+            color: var(--cal-gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        .team-bio { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
+        .team-photo {
+            width: 100%; border-radius: 10px;
+            margin-top: 2.5rem;
+            border: 1px solid rgba(253,181,21,0.1);
+        }
+
         /* FAQ */
         .faq-list { max-width: 700px; }
         .faq-item {
@@ -357,6 +404,7 @@
             <li><a href="#sessions">Sessions</a></li>
             <li><a href="#gate">Ready Gate</a></li>
             <li><a href="#investors">Investors</a></li>
+            <li><a href="#team">Team</a></li>
             <li><a href="#faq">FAQ</a></li>
         </ul>
     </div>
@@ -543,6 +591,38 @@
     </div>
 </section>
 
+<!-- TEAM -->
+<section id="team" style="background: rgba(0,50,98,0.3);">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">The Team</p>
+            <h2 class="section-title">Built by Berkeley, for Berkeley.</h2>
+            <p class="section-desc">BASICS is run by people who've built companies, taught founders, and know what it takes to get from idea to investment.</p>
+        </div>
+        <div class="team-grid reveal">
+            <div class="team-card">
+                <div class="team-avatar">MJ</div>
+                <h3>Mike Jacobs</h3>
+                <div class="team-role">Co-Founder & Instructor</div>
+                <p class="team-bio">UC Berkeley alum and serial entrepreneur. CEO of Qluu Lab (defense AI). Previously built and scaled products across AI, edtech, and enterprise SaaS. Teaches COGSCI 198 and runs the BASICS campaign.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">UK</div>
+                <h3>Prof. Uri Korisky</h3>
+                <div class="team-role">Co-Founder & Faculty Advisor</div>
+                <p class="team-bio">UC Berkeley faculty and expert in cognitive science, lifelong learning, and human performance. Brings the academic rigor behind the BASICS curriculum — bridging cognitive science research with practical founder education.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">YB</div>
+                <h3>Yasmine Baker</h3>
+                <div class="team-role">Reader</div>
+                <p class="team-bio">UC Berkeley student and BASICS reader. Reviews founder submissions, provides feedback on campaign deliverables, and helps assess readiness for the Ready Gate.</p>
+            </div>
+        </div>
+        <img src="./images/team.png" alt="BASICS team and students in session" class="team-photo reveal" loading="lazy">
+    </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq" style="background: rgba(0,50,98,0.3);">
     <div class="container">
@@ -586,6 +666,7 @@
     <p style="opacity:0.6;margin-top:0.25rem;">COGSCI 198 · UC Berkeley</p>
     <div class="footer-links">
         <a href="#apply">Apply</a>
+        <a href="#team">Team</a>
         <a href="#investors">For Investors</a>
         <a href="#faq">FAQ</a>
     </div>
