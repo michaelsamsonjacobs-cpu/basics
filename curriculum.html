@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COGSCI 198 Interactive Curriculum &amp; Startup Workspace — BASICS × UniSchool</title>
+    <title>COGSCI 198 Interactive Curriculum &amp; Startup Workspace — BASICS at UC Berkeley</title>
     <link rel="icon" type="image/jpeg" href="./images/favicon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -63,7 +63,7 @@
 </nav>
 
 <div class="wrap">
-    <span class="kicker">Powered by UniSchool DisciplineDNA &bull; COGSCI 198 Syllabus (Michael Jacobs)</span>
+    <span class="kicker">UC Berkeley COGSCI 198 &bull; Official Syllabus (Michael Jacobs)</span>
     <h1>Startup Battle School — Interactive Venture Builder</h1>
     <p class="sub">
         Sign in with your <strong>@berkeley.edu</strong> founder profile to create your startup workspace, work through all 15 sessions of the official <em>COGSCI 198: Startup Battle School</em> syllabus, run live unit-economics &amp; SAFE simulations, and submit completed milestones to Mike, Uri &amp; mentors to unlock the BASICS Investor Syndicate.
@@ -97,10 +97,10 @@
         </div>
     </div>
 
-    <!-- INTERACTIVE UNISCHOOL SANDBOX SIMULATORS -->
+    <!-- INTERACTIVE SANDBOX SIMULATORS -->
     <div class="sim-row">
         <div class="card">
-            <h3>UniSchool Sandbox A &bull; Bottom-Up TAM &amp; LTV/CAC Lab (Sessions 2 &amp; 4)</h3>
+            <h3>Sandbox A &bull; Bottom-Up TAM &amp; LTV/CAC Lab (Sessions 2 &amp; 4)</h3>
             <label style="font-size:0.78rem;color:var(--text-secondary);">Reachable Beachhead Customers &times; Annual Contract Value ($)</label>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
                 <input type="number" id="sCust" value="5000" oninput="runSims()" placeholder="Customers">
@@ -115,7 +115,7 @@
         </div>
 
         <div class="card">
-            <h3>UniSchool Sandbox B &bull; Post-Money YC SAFE &amp; Founder Ownership Sim (Session 7)</h3>
+            <h3>Sandbox B &bull; Post-Money YC SAFE &amp; Founder Ownership Sim (Session 7)</h3>
             <label style="font-size:0.78rem;color:var(--text-secondary);">Raise Amount ($) vs. Post-Money Valuation Cap ($)</label>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
                 <input type="number" id="sRaise" value="1500000" oninput="runSims()">
@@ -127,12 +127,16 @@
         </div>
     </div>
 
-    <h2 style="font-family:'Sora',sans-serif;font-size:1.45rem;margin-bottom:1rem;color:var(--cal-gold);">Official 15-Session COGSCI 198 Curriculum Quests (JSON-Driven)</h2>
+    <h2 style="font-family:'Sora',sans-serif;font-size:1.45rem;margin-bottom:1rem;color:var(--cal-gold);">Official 15-Session COGSCI 198 Curriculum &amp; Deliverables</h2>
     <div id="modulesContainer" class="mod-grid"></div>
+
+    <footer style="text-align:center;margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(253,181,21,0.14);color:var(--text-secondary);font-size:0.86rem;">
+        Interactive curriculum &amp; startup workspace app compliments of <strong style="color:var(--cal-gold);">University School</strong>.
+    </footer>
 </div>
 
 <script>
-const STORAGE_KEY = 'basics_unischool_workspace_v1';
+const STORAGE_KEY = 'basics_cogsci198_workspace_v1';
 let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"email":"","startup":"","thesis":"","notes":{},"done":{}}');
 let curriculum = null;
 
@@ -204,7 +208,7 @@ async function loadCurriculum() {
                 <div class="sess-tag">${m.session}</div>
                 <h3 style="font-family:'Sora',sans-serif;font-size:1.08rem;margin:0.3rem 0 0.5rem;color:#fff;">${m.title}</h3>
                 <p style="font-size:0.86rem;color:var(--text-secondary);">${m.summary}</p>
-                <div class="quest-box"><strong>UniSchool Quest:</strong> ${m.unischool_quest}</div>
+                <div class="quest-box"><strong>Session Deliverable:</strong> ${m.session_quest}</div>
                 <textarea rows="2" placeholder="${m.deliverable_prompt}" data-mid="${m.id}">${state.notes[m.id] || ''}</textarea>
             </div>
             <label style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#4ade80;cursor:pointer;margin-top:0.35rem;">

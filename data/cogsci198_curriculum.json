@@ -2,7 +2,6 @@
   "course_code": "COGSCI 198",
   "course_title": "Startup Battle School: Building AI-Powered Ventures",
   "instructor": "Michael Jacobs",
-  "engine": "UniSchool DisciplineDNA v1.0",
   "grading_rubric": [
     {
       "component": "Startup Concept & Market Thesis",
@@ -31,64 +30,65 @@
       "session": "Session 1",
       "title": "Business 101 & Lean AGI",
       "summary": "Startup lifecycle from conception to scale, Lean AGI landscape, cognitive science of human-AI copilot collaboration, and prompt engineering foundations.",
-      "unischool_quest": "Configure your team's AI Copilot stack & submit your 3-hypothesis Venture Thesis.",
-      "deliverable_prompt": "One-sentence startup thesis + AI copilot workflow"
+      "deliverable_prompt": "One-sentence startup thesis + AI copilot workflow",
+      "session_quest": "Configure your team's AI Copilot stack & submit your 3-hypothesis Venture Thesis."
     },
     {
       "id": "s2",
       "session": "Session 2",
       "title": "The Problem & The Market",
       "summary": "Identify hair-on-fire problems, segment beachhead markets, estimate bottom-up TAM, and synthesize structured user profiles.",
-      "unischool_quest": "Interactive Bottom-Up TAM Calculator & Customer Discovery Interview Targeter (min 15 interviews).",
-      "deliverable_prompt": "Beachhead persona + bottom-up TAM ($ users \u00d7 ACV) + 15 named interview targets"
+      "deliverable_prompt": "Beachhead persona + bottom-up TAM ($ users \u00d7 ACV) + 15 named interview targets",
+      "session_quest": "Interactive Bottom-Up TAM Calculator & Customer Discovery Interview Targeter (min 15 interviews)."
     },
     {
       "id": "s3",
       "session": "Session 3",
       "title": "Product & Customer Feedback Synthesis",
       "summary": "Design minimum lovable AI products around quantified customer pain, write crisp User Stories, and synthesize primary market research (PMR).",
-      "unischool_quest": "User Story Syntax Generator + AI Customer Interview Synthesis Matrix.",
-      "deliverable_prompt": "Top 3 validated user stories + live prototype / demo link"
+      "deliverable_prompt": "Top 3 validated user stories + live prototype / demo link",
+      "session_quest": "User Story Syntax Generator + AI Customer Interview Synthesis Matrix."
     },
     {
       "id": "s4",
       "session": "Session 4",
       "title": "Sales, Growth & Partnership Engine",
       "summary": "'Know you can make sales before you spend on marketing!' Lead generation, qualification, closing, CAC, Churn, LTV/CAC ratio, and Partner Need Matrix.",
-      "unischool_quest": "Beachhead Sales Funnel & LTV/CAC Unit-Economics Simulator + Cold Outreach Lab.",
-      "deliverable_prompt": "First 10 qualified prospect conversations + Partner Need Matrix"
+      "deliverable_prompt": "First 10 qualified prospect conversations + Partner Need Matrix",
+      "session_quest": "Beachhead Sales Funnel & LTV/CAC Unit-Economics Simulator + Cold Outreach Lab."
     },
     {
       "id": "s5",
       "session": "Session 5",
       "title": "AI-Powered Marketing & Sustainable Growth",
       "summary": "Rapid digital experiment design, channel CAC calibration, and avoiding 'Jumping the Shark' premature scaling.",
-      "unischool_quest": "'Jumping the Shark' Growth vs. Retention Simulator & Funnel Pro-Forma.",
-      "deliverable_prompt": "2 low-cost channel experiments + measured conversion / CAC baseline"
+      "deliverable_prompt": "2 low-cost channel experiments + measured conversion / CAC baseline",
+      "session_quest": "'Jumping the Shark' Growth vs. Retention Simulator & Funnel Pro-Forma."
     },
     {
       "id": "s6",
       "session": "Session 6",
       "title": "Finance Essentials & SaaS Unit Economics",
       "summary": "Assets = Liabilities + Equity, Gross Margin, ARR, EBIT/EBITDA, and translating Stripe/sales telemetry into clean pro-forma statements.",
-      "unischool_quest": "Interactive 24-Month SaaS Pro-Forma & Gross-Margin Sanity Checker.",
-      "deliverable_prompt": "18-month burn, runway & unit-economics model"
+      "deliverable_prompt": "18-month burn, runway & unit-economics model",
+      "session_quest": "Interactive 24-Month SaaS Pro-Forma & Gross-Margin Sanity Checker."
     },
     {
       "id": "s7",
       "session": "Session 7",
       "title": "Venture Capital, SAFE Math & Deal Memos",
       "summary": "How VCs underwrite power-law multiples, emotional + financial narrative calibration, post-money SAFE dilution math, and writing an institutional Deal Memo.",
-      "unischool_quest": "SAFE Cap-Table Dilution Simulator + Investor Deal Memo & Pitch Calibrator.",
-      "deliverable_prompt": "1-Page Executive Summary (BASICS Booklet format) + Target VC Fit List"
+      "deliverable_prompt": "1-Page Executive Summary (BASICS Booklet format) + Target VC Fit List",
+      "session_quest": "SAFE Cap-Table Dilution Simulator + Investor Deal Memo & Pitch Calibrator."
     },
     {
       "id": "s8_15",
       "session": "Sessions 8\u201315",
       "title": "Powerful Presentations, Mentor Madness & Demo Day",
       "summary": "1-on-1 mentor/investor gauntlet, leadership under uncertainty, finalized Executive Summary + VC Deck, and clearing the Ready-Gate (>= 80/100) for Berkeley Syndicate & YC.",
-      "unischool_quest": "Live 100-Point Ready-Gate Audit -> Request Mike, Uri & Mentor Sign-Off.",
-      "deliverable_prompt": "Final 3-min Pitch Video + Deck + Executive Summary submitted to Ready-Gate"
+      "deliverable_prompt": "Final 3-min Pitch Video + Deck + Executive Summary submitted to Ready-Gate",
+      "session_quest": "Live 100-Point Ready-Gate Audit -> Request Mike, Uri & Mentor Sign-Off."
     }
-  ]
+  ],
+  "provider": "University School"
 }
