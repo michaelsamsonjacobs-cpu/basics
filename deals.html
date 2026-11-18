@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Accredited Syndicate Portal — BASICS at Berkeley LLC</title>
+    <link rel="icon" type="image/jpeg" href="./images/favicon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --berkeley-blue: #003262;
+            --cal-gold: #FDB515;
+            --dark-bg: #001a33;
+            --card-bg: #002244;
+            --text-primary: #ffffff;
+            --text-secondary: #b0c4de;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 5.5rem 1.5rem 3rem;
+        }
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+            background: rgba(0, 26, 51, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(253, 181, 21, 0.15);
+            padding: 0 2rem;
+        }
+        .nav-inner {
+            max-width: 1120px; margin: 0 auto; height: 62px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--cal-gold); text-decoration: none; letter-spacing: 2px; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.88rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--cal-gold); }
+
+        .wrap { max-width: 940px; margin: 0 auto; }
+        .badge-506b {
+            display: inline-block; padding: 5px 12px; border-radius: 999px;
+            background: rgba(253,181,21,0.12); border: 1px solid rgba(253,181,21,0.35);
+            color: var(--cal-gold); font-family: 'Sora', sans-serif; font-size: 0.75rem; font-weight: 700;
+            letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 0.85rem;
+        }
+        h1 { font-family: 'Sora', sans-serif; font-size: clamp(1.75rem, 4vw, 2.4rem); font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+        .sub { color: var(--text-secondary); font-size: 0.96rem; max-width: 680px; line-height: 1.55; margin-bottom: 1.8rem; }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(253,181,21,0.18);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+        .fg { margin-bottom: 1.15rem; }
+        .fg label {
+            display: block; font-family: 'Sora', sans-serif; font-size: 0.8rem; font-weight: 600;
+            color: var(--cal-gold); margin-bottom: 0.4rem;
+        }
+        .fg input, .fg select, .fg textarea {
+            width: 100%; background: rgba(0,0,0,0.32); border: 1px solid rgba(253,181,21,0.2);
+            border-radius: 8px; padding: 11px 14px; color: #fff; font-size: 0.93rem; font-family: 'Inter', sans-serif;
+        }
+        .fg select option { background: var(--dark-bg); }
+        .check-row {
+            display: flex; align-items: flex-start; gap: 10px;
+            background: rgba(0,0,0,0.25); padding: 12px 14px; border-radius: 8px;
+            border: 1px solid rgba(253,181,21,0.15); margin: 1.1rem 0; font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5;
+        }
+        .check-row input { margin-top: 3px; transform: scale(1.2); accent-color: var(--cal-gold); }
+        .btn-gold {
+            background: var(--cal-gold); color: var(--berkeley-blue); font-family: 'Sora', sans-serif;
+            font-weight: 800; font-size: 0.96rem; padding: 13px 22px; border: none; border-radius: 8px;
+            cursor: pointer; transition: all 0.2s; width: 100%;
+        }
+        .btn-gold:hover { background: #ffcc44; transform: translateY(-1px); }
+
+        .watermark-bar {
+            background: rgba(242,101,34,0.14); border: 1px solid rgba(242,101,34,0.45);
+            color: #ffb38a; font-family: 'Sora', sans-serif; font-size: 0.74rem; font-weight: 700;
+            padding: 8px 14px; border-radius: 8px; margin-bottom: 1.25rem; text-align: center; letter-spacing: 0.4px;
+        }
+        .terms-strip {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); gap: 0.9rem; margin: 1.25rem 0;
+        }
+        .term-box {
+            background: rgba(0,26,51,0.75); border: 1px solid rgba(253,181,21,0.2);
+            border-radius: 10px; padding: 1rem; text-align: center;
+        }
+        .term-box .val { font-family: 'Sora', sans-serif; font-size: 1.35rem; font-weight: 800; color: var(--cal-gold); }
+        .term-box .lbl { font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px; }
+        .chip-row { display: flex; gap: 0.65rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .amt-chip {
+            padding: 9px 16px; border-radius: 8px; border: 1px solid rgba(253,181,21,0.35);
+            background: rgba(0,26,51,0.7); color: #fff; font-family: 'Sora', sans-serif; font-weight: 700;
+            cursor: pointer; font-size: 0.88rem;
+        }
+        .amt-chip.active, .amt-chip:hover { background: var(--cal-gold); color: var(--berkeley-blue); }
+        .status-box { margin-top: 1rem; padding: 1rem 1.2rem; border-radius: 8px; display: none; font-size: 0.92rem; line-height: 1.5; }
+        .status-ok { display: block; background: rgba(22,163,74,0.18); border: 1px solid #4ade80; color: #dcfce7; }
+        .status-err { display: block; background: rgba(220,38,38,0.18); border: 1px solid #f87171; color: #fee2e2; }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="nav-inner">
+        <a href="./index.html" class="nav-logo">BASICS</a>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./curriculum.html">COGSCI 198 Curriculum</a></li>
+            <li><a href="./playbook.html">Playbook</a></li>
+            <li><a href="./investors.html">Investor Network</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="wrap">
+    <!-- GATE VIEW (Shown to unauthenticated visitors — ZERO specific deal terms disclosed!) -->
+    <div id="gateView">
+        <span class="badge-506b">SEC Rule 506(b) Accredited Syndicate Gate &bull; BASICS at Berkeley LLC</span>
+        <h1>Private Accredited Syndicate Portal</h1>
+        <p class="sub">
+            Access to private BASICS at Berkeley LLC SPV deal rooms and Sydecar allocations is strictly restricted to verified accredited investors with a pre-existing or approved substantive relationship. No securities are offered to the general public.
+        </p>
+
+        <div class="card">
+            <form id="gateForm">
+                <div class="grid-2">
+                    <div class="fg">
+                        <label>Full Legal Name *</label>
+                        <input type="text" id="gName" required placeholder="Jane Doe">
+                    </div>
+                    <div class="fg">
+                        <label>Syndicate / Invited Email Address *</label>
+                        <input type="email" id="gEmail" required placeholder="you@firm.com">
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="fg">
+                        <label>Firm, Fund, or Angel Entity</label>
+                        <input type="text" id="gFirm" placeholder="e.g. Mucker Capital / Individual Angel">
+                    </div>
+                    <div class="fg">
+                        <label>SEC Rule 501(a) Accreditation Basis *</label>
+                        <select id="gBasis" required>
+                            <option value="">Select qualification...</option>
+                            <option value="Income >$200k ($300k joint) past 2 yrs">Individual income &gt;$200K (&gt;$300K joint) in past 2 yrs</option>
+                            <option value="Net worth >$1M excl primary residence">Net worth &gt;$1M (excluding primary residence)</option>
+                            <option value="Series 7 / 65 / 82 license holder">FINRA Series 7, 65, or 82 license holder in good standing</option>
+                            <option value="Entity / Fund >$5M assets or 100% accredited owners">Venture Fund / Entity with &gt;$5M assets (or 100% accredited owners)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="fg">
+                        <label>Typical Syndicate Check Size *</label>
+                        <select id="gCheck" required>
+                            <option value="$5,000 - $10,000">$5,000 &ndash; $10,000</option>
+                            <option value="$10,000 - $25,000">$10,000 &ndash; $25,000</option>
+                            <option value="$25,000 - $50,000">$25,000 &ndash; $50,000</option>
+                            <option value="$50,000+">$50,000+</option>
+                        </select>
+                    </div>
+                    <div class="fg">
+                        <label>Prior Private Startup Investments *</label>
+                        <select id="gPrior" required>
+                            <option value="1-3 startups">1 &ndash; 3 private startups</option>
+                            <option value="4-10 startups">4 &ndash; 10 private startups</option>
+                            <option value="10+ startups / Institutional VC">10+ startups / Institutional VC</option>
+                            <option value="First angel investment (accredited)">First angel check (accredited, comfortable w/ illiquidity)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label class="check-row">
+                    <input type="checkbox" id="gNda" required>
+                    <span>
+                        <strong>Accredited Attestation &amp; Strict Anti-Forwarding Covenant:</strong> I certify that I am an Accredited Investor under SEC Rule 501(a), understand private startup SPVs carry high risk and long-term illiquidity, and agree <strong>never to post, tweet, forward, or publicly share</strong> any BASICS Deal Room terms or Sydecar commit links.
+                    </span>
+                </label>
+
+                <button type="submit" class="btn-gold" id="gateBtn">Verify Syndicate Access &amp; Unlock Deal Room &rarr;</button>
+                <div id="gateStatus" class="status-box"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- PRIVATE DEAL ROOM VIEW (Populated strictly from authenticated /api/evardi-deal) -->
+    <div id="dealView" style="display:none;">
+        <div id="wmBanner" class="watermark-bar"></div>
+        <span class="badge-506b">Active Alumni SPV &bull; Administered on Sydecar.io</span>
+        <h1 id="dTitle"></h1>
+        <p class="sub" id="dFounders"></p>
+
+        <div class="card">
+            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid rgba(253,181,21,0.25);background:#000;margin-bottom:1.35rem;">
+                <iframe id="dVideo" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen></iframe>
+            </div>
+
+            <div class="terms-strip">
+                <div class="term-box"><div class="val">$5,000</div><div class="lbl">Minimum LP Check</div></div>
+                <div class="term-box"><div class="val">20%</div><div class="lbl">Syndicate Carry</div></div>
+                <div class="term-box"><div class="val">0%</div><div class="lbl">Annual Mgmt Fee</div></div>
+                <div class="term-box"><div class="val">1 Line</div><div class="lbl">YC SAFE via Sydecar</div></div>
+            </div>
+
+            <h3 style="font-family:'Sora',sans-serif;font-size:1.05rem;color:var(--cal-gold);margin:1.25rem 0 0.6rem;">Confidential Deal Highlights (BASICS Ready-Gate: 94/100)</h3>
+            <ul id="dHighlights" style="padding-left:1.25rem;color:var(--text-secondary);font-size:0.94rem;line-height:1.65;"></ul>
+        </div>
+
+        <div class="card" style="border-color:rgba(253,181,21,0.45);">
+            <h2 style="font-family:'Sora',sans-serif;font-size:1.3rem;color:var(--cal-gold);margin-bottom:0.4rem;">Reserve Allocation &amp; Launch Sydecar SPV Checkout</h2>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.15rem;">
+                Operated by <strong>BASICS at Berkeley LLC</strong> on <strong>Sydecar.io</strong> (automated KYC/AML, DocuSign subscription docs, ACH/wire &amp; lifetime K-1s). Select your intended commitment below:
+            </p>
+
+            <div class="chip-row" id="chipRow">
+                <button type="button" class="amt-chip active" data-amt="5000">$5,000</button>
+                <button type="button" class="amt-chip" data-amt="10000">$10,000</button>
+                <button type="button" class="amt-chip" data-amt="25000">$25,000</button>
+                <button type="button" class="amt-chip" data-amt="50000">$50,000</button>
+                <button type="button" class="amt-chip" data-amt="100000">$100,000</button>
+            </div>
+
+            <form id="commitForm">
+                <div class="grid-2">
+                    <div class="fg">
+                        <label>Commitment Amount ($ USD, $5,000 min) *</label>
+                        <input type="number" id="cAmount" min="5000" step="1000" value="5000" required>
+                    </div>
+                    <div class="fg">
+                        <label>Entity Name or Co-Invest Note (Optional)</label>
+                        <input type="text" id="cNotes" placeholder="e.g. Investing via Trust / LLC, can intro utility VP">
+                    </div>
+                </div>
+                <button type="submit" class="btn-gold" id="commitBtn">Lock Soft Commit &amp; Continue to Sydecar &rarr;</button>
+                <div id="commitStatus" class="status-box"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const inviteToken = params.get('invite') || '';
+if (params.get('email')) document.getElementById('gEmail').value = params.get('email');
+
+async function checkExistingSession() {
+    try {
+        const r = await fetch('/api/evardi-deal', { credentials: 'include' });
+        if (!r.ok) return false;
+        const data = await r.json();
+        if (!data.authenticated) return false;
+        renderDealRoom(data);
+        return true;
+    } catch { return false; }
+}
+
+function renderDealRoom(data) {
+    document.getElementById('gateView').style.display = 'none';
+    document.getElementById('dealView').style.display = 'block';
+    const d = data.deal;
+    document.getElementById('wmBanner').textContent = d.watermark;
+    document.getElementById('dTitle').textContent = `${d.company} — ${d.tagline}`;
+    document.getElementById('dFounders').textContent = `${d.cohort} • Founders: ${d.founders} • Sponsor: ${d.spv_entity}`;
+    document.getElementById('dVideo').src = `https://www.youtube.com/embed/${d.pitch_youtube_id}`;
+    const ul = document.getElementById('dHighlights');
+    ul.innerHTML = '';
+    d.highlights.forEach((h) => {
+        const li = document.createElement('li');
+        li.style.marginBottom = '0.45rem';
+        li.textContent = h;
+        ul.appendChild(li);
+    });
+}
+
+document.getElementById('gateForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('gateBtn');
+    const st = document.getElementById('gateStatus');
+    btn.disabled = true;
+    btn.textContent = 'Verifying SEC 506(b) Syndicate Eligibility...';
+    st.className = 'status-box';
+    try {
+        const res = await fetch('/api/syndicate-gate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({
+                full_name: document.getElementById('gName').value,
+                email: document.getElementById('gEmail').value,
+                firm: document.getElementById('gFirm').value,
+                accreditation_basis: document.getElementById('gBasis').value,
+                check_band: document.getElementById('gCheck').value,
+                prior_deals: document.getElementById('gPrior').value,
+                nda_accepted: document.getElementById('gNda').checked,
+                invite_token: inviteToken,
+            }),
+        });
+        const out = await res.json();
+        if (!res.ok) {
+            st.className = 'status-box status-err';
+            st.textContent = out.error || 'Verification failed.';
+        } else if (out.status === 'approved') {
+            await checkExistingSession();
+        } else {
+            st.className = 'status-box status-ok';
+            st.textContent = out.message;
+        }
+    } catch (err) {
+        st.className = 'status-box status-err';
+        st.textContent = 'Network error — please retry.';
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Verify Syndicate Access & Unlock Deal Room →';
+    }
+});
+
+document.querySelectorAll('.amt-chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+        document.querySelectorAll('.amt-chip').forEach((c) => c.classList.remove('active'));
+        chip.classList.add('active');
+        document.getElementById('cAmount').value = chip.dataset.amt;
+    });
+});
+
+document.getElementById('commitForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('commitBtn');
+    const st = document.getElementById('commitStatus');
+    btn.disabled = true;
+    btn.textContent = 'Recording Commitment on BASICS × Sydecar Ledger...';
+    try {
+        const res = await fetch('/api/evardi-commit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({
+                amount_usd: Number(document.getElementById('cAmount').value),
+                notes: document.getElementById('cNotes').value,
+            }),
+        });
+        const out = await res.json();
+        if (!res.ok) {
+            st.className = 'status-box status-err';
+            st.textContent = out.error || 'Could not record commitment.';
+        } else {
+            st.className = 'status-box status-ok';
+            st.textContent = out.message;
+            if (out.redirect_url) {
+                setTimeout(() => { window.location.href = out.redirect_url; }, 900);
+            }
+        }
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Lock Soft Commit & Continue to Sydecar →';
+    }
+});
+
+checkExistingSession();
+</script>
+</body>
+</html>

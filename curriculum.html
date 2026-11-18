@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COGSCI 198 Interactive Curriculum &amp; Startup Workspace — BASICS × UniSchool</title>
+    <link rel="icon" type="image/jpeg" href="./images/favicon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --berkeley-blue: #003262;
+            --cal-gold: #FDB515;
+            --dark-bg: #001a33;
+            --card-bg: #002244;
+            --text-primary: #ffffff;
+            --text-secondary: #b0c4de;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--dark-bg); color: var(--text-primary); padding: 5.5rem 1.5rem 4rem; line-height: 1.6; }
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+            background: rgba(0, 26, 51, 0.94); backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(253, 181, 21, 0.15); padding: 0 2rem;
+        }
+        .nav-inner { max-width: 1160px; margin: 0 auto; height: 62px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--cal-gold); text-decoration: none; letter-spacing: 2px; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.88rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--cal-gold); }
+
+        .wrap { max-width: 1120px; margin: 0 auto; }
+        .kicker { display: inline-block; padding: 5px 12px; border-radius: 999px; background: rgba(253,181,21,0.12); border: 1px solid rgba(253,181,21,0.35); color: var(--cal-gold); font-family: 'Sora', sans-serif; font-size: 0.75rem; font-weight: 700; margin-bottom: 0.8rem; }
+        h1 { font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 0.5rem; }
+        .sub { color: var(--text-secondary); max-width: 780px; margin-bottom: 1.75rem; font-size: 0.98rem; }
+
+        .top-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+        @media (max-width: 860px) { .top-grid { grid-template-columns: 1fr; } }
+        .card { background: var(--card-bg); border: 1px solid rgba(253,181,21,0.18); border-radius: 14px; padding: 1.5rem; }
+        .card h3 { font-family: 'Sora', sans-serif; color: var(--cal-gold); font-size: 1.05rem; margin-bottom: 0.75rem; }
+        input, textarea { width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(253,181,21,0.2); border-radius: 8px; padding: 10px 12px; color: #fff; font-family: 'Inter', sans-serif; font-size: 0.9rem; margin-bottom: 0.65rem; }
+        .btn { background: var(--cal-gold); color: var(--berkeley-blue); font-family: 'Sora', sans-serif; font-weight: 800; padding: 10px 18px; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem; }
+        .mod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.15rem; margin-bottom: 2rem; }
+        .mod-card { background: var(--card-bg); border: 1px solid rgba(253,181,21,0.15); border-radius: 14px; padding: 1.35rem; display: flex; flex-direction: column; justify-content: space-between; }
+        .mod-card.done { border-color: #4ade80; }
+        .sess-tag { font-family: 'Sora', sans-serif; font-size: 0.74rem; color: var(--cal-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
+        .quest-box { background: rgba(0,26,51,0.75); border-left: 3px solid var(--cal-gold); padding: 9px 12px; border-radius: 6px; font-size: 0.84rem; color: #e2e8f0; margin: 0.75rem 0; }
+        .sim-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.25rem; margin-bottom: 2rem; }
+        .score-pill { font-family: 'Sora', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--cal-gold); }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="nav-inner">
+        <a href="./index.html" class="nav-logo">BASICS</a>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./playbook.html">Playbook</a></li>
+            <li><a href="./apply.html">Apply (@berkeley.edu)</a></li>
+            <li><a href="./deals.html">Syndicate Portal</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="wrap">
+    <span class="kicker">Powered by UniSchool DisciplineDNA &bull; COGSCI 198 Syllabus (Michael Jacobs)</span>
+    <h1>Startup Battle School — Interactive Venture Builder</h1>
+    <p class="sub">
+        Sign in with your <strong>@berkeley.edu</strong> founder profile to create your startup workspace, work through all 15 sessions of the official <em>COGSCI 198: Startup Battle School</em> syllabus, run live unit-economics &amp; SAFE simulations, and submit completed milestones to Mike, Uri &amp; mentors to unlock the BASICS Investor Syndicate.
+    </p>
+
+    <div class="top-grid">
+        <div class="card">
+            <h3>1. @berkeley.edu Founder &amp; Startup Team Workspace</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.65rem;">
+                <input type="email" id="fEmail" placeholder="founder@berkeley.edu">
+                <input type="text" id="fStartup" placeholder="Startup Name (e.g. Evardi)">
+            </div>
+            <input type="text" id="fThesis" placeholder="One-line AI venture thesis (who has what urgent problem & how your AI copilot/agent solves it)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+                <button class="btn" onclick="saveWorkspace()">Save Berkeley Startup Profile</button>
+                <span id="wsBadge" style="font-size:0.84rem;color:#4ade80;"></span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>2. Live COGSCI 198 Ready-Gate Score (100-Pt Rubric)</h3>
+            <div style="display:flex;align-items:baseline;gap:0.8rem;margin-bottom:0.4rem;">
+                <span class="score-pill" id="rgTotal">0 / 100</span>
+                <span id="rgVerdict" style="font-size:0.85rem;color:var(--text-secondary);">Complete syllabus quests below (&ge;80 unlocks Investor Deal Room)</span>
+            </div>
+            <p style="font-size:0.82rem;color:var(--text-secondary);">
+                Concept (30) &bull; Customer Feedback (20) &bull; Participation (20) &bull; GTM &amp; Sales (20) &bull; Investor Pitch &amp; Exec Summary (10)
+            </p>
+            <button class="btn" style="margin-top:0.8rem;width:100%;" onclick="submitForMentorReview()">Send Progress to Mike &amp; Mentors for Coaching &rarr;</button>
+            <div id="mentorMsg" style="font-size:0.83rem;color:#4ade80;margin-top:0.5rem;"></div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE UNISCHOOL SANDBOX SIMULATORS -->
+    <div class="sim-row">
+        <div class="card">
+            <h3>UniSchool Sandbox A &bull; Bottom-Up TAM &amp; LTV/CAC Lab (Sessions 2 &amp; 4)</h3>
+            <label style="font-size:0.78rem;color:var(--text-secondary);">Reachable Beachhead Customers &times; Annual Contract Value ($)</label>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+                <input type="number" id="sCust" value="5000" oninput="runSims()" placeholder="Customers">
+                <input type="number" id="sAcv" value="12000" oninput="runSims()" placeholder="ACV ($)">
+            </div>
+            <label style="font-size:0.78rem;color:var(--text-secondary);">Customer Acquisition Cost ($) vs. Annual Churn (%)</label>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+                <input type="number" id="sCac" value="4000" oninput="runSims()" placeholder="CAC ($)">
+                <input type="number" id="sChurn" value="15" oninput="runSims()" placeholder="Churn %">
+            </div>
+            <div id="simAOut" style="font-size:0.88rem;color:#fff;background:rgba(0,0,0,0.28);padding:10px;border-radius:8px;"></div>
+        </div>
+
+        <div class="card">
+            <h3>UniSchool Sandbox B &bull; Post-Money YC SAFE &amp; Founder Ownership Sim (Session 7)</h3>
+            <label style="font-size:0.78rem;color:var(--text-secondary);">Raise Amount ($) vs. Post-Money Valuation Cap ($)</label>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+                <input type="number" id="sRaise" value="1500000" oninput="runSims()">
+                <input type="number" id="sCap" value="15000000" oninput="runSims()">
+            </div>
+            <label style="font-size:0.78rem;color:var(--text-secondary);">Target Exit Valuation ($M) — VC Power-Law Multiple Check</label>
+            <input type="number" id="sExitM" value="250" oninput="runSims()">
+            <div id="simBOut" style="font-size:0.88rem;color:#fff;background:rgba(0,0,0,0.28);padding:10px;border-radius:8px;"></div>
+        </div>
+    </div>
+
+    <h2 style="font-family:'Sora',sans-serif;font-size:1.45rem;margin-bottom:1rem;color:var(--cal-gold);">Official 15-Session COGSCI 198 Curriculum Quests (JSON-Driven)</h2>
+    <div id="modulesContainer" class="mod-grid"></div>
+</div>
+
+<script>
+const STORAGE_KEY = 'basics_unischool_workspace_v1';
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"email":"","startup":"","thesis":"","notes":{},"done":{}}');
+let curriculum = null;
+
+document.getElementById('fEmail').value = state.email || '';
+document.getElementById('fStartup').value = state.startup || '';
+document.getElementById('fThesis').value = state.thesis || '';
+
+function saveWorkspace() {
+    const em = document.getElementById('fEmail').value.trim().toLowerCase();
+    if (!em.endsWith('@berkeley.edu') && !em.endsWith('@cal.berkeley.edu')) {
+        document.getElementById('wsBadge').style.color = '#f87171';
+        document.getElementById('wsBadge').textContent = 'Founder track requires a valid @berkeley.edu or @cal.berkeley.edu email.';
+        return;
+    }
+    state.email = em;
+    state.startup = document.getElementById('fStartup').value.trim();
+    state.thesis = document.getElementById('fThesis').value.trim();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    document.getElementById('wsBadge').style.color = '#4ade80';
+    document.getElementById('wsBadge').textContent = '✓ Saved locally for ' + state.startup + ' (' + em + ')';
+    recalcScore();
+}
+
+function recalcScore() {
+    if (!curriculum) return;
+    const doneCount = Object.values(state.done || {}).filter(Boolean).length;
+    const base = Math.round((doneCount / curriculum.modules.length) * 85);
+    const bonus = (state.email.includes('berkeley.edu') ? 5 : 0) + (state.thesis && state.thesis.length > 20 ? 10 : 0);
+    const score = Math.min(100, base + bonus);
+    document.getElementById('rgTotal').textContent = score + ' / 100';
+    document.getElementById('rgVerdict').textContent = score >= 80
+        ? '✓ READY-GATE PASSED — Eligible for Mentor Madness & BASICS Syndicate Review!'
+        : `Complete ${Math.max(1, 7 - doneCount)} more session deliverables to hit 80/100 Ready-Gate`;
+    return score;
+}
+
+function runSims() {
+    const cust = Math.max(1, Number(document.getElementById('sCust').value || 0));
+    const acv = Math.max(1, Number(document.getElementById('sAcv').value || 0));
+    const cac = Math.max(1, Number(document.getElementById('sCac').value || 1));
+    const churn = Math.max(1, Number(document.getElementById('sChurn').value || 15)) / 100;
+    const tamM = ((cust * acv) / 1e6).toFixed(1);
+    const ltv = Math.round(acv / churn);
+    const ratio = (ltv / cac).toFixed(1);
+    document.getElementById('simAOut').innerHTML =
+        `<strong>Beachhead SOM/TAM:</strong> $${tamM}M/yr &bull; <strong>LTV:</strong> $${ltv.toLocaleString()} &bull; <strong>LTV/CAC:</strong> <span style="color:${ratio >= 3 ? '#4ade80' : '#fbbf24'}">${ratio}x</span> ${ratio >= 3 ? '(Healthy >=3x)' : '(Target >=3x before ad spend)'}`;
+
+    const raise = Math.max(0, Number(document.getElementById('sRaise').value || 0));
+    const cap = Math.max(raise + 1, Number(document.getElementById('sCap').value || 1));
+    const exitM = Math.max(1, Number(document.getElementById('sExitM').value || 100));
+    const dil = ((raise / cap) * 100).toFixed(1);
+    const founderPct = (100 - raise / cap * 100).toFixed(1);
+    const vcMult = ((exitM * 1e6 * (raise / cap)) / Math.max(raise, 1)).toFixed(1);
+    document.getElementById('simBOut').innerHTML =
+        `<strong>SAFE Dilution:</strong> ${dil}% &bull; <strong>Founders Retain:</strong> ${founderPct}% &bull; <strong>VC Gross Multiple @ $${exitM}M:</strong> <span style="color:#FDB515">${vcMult}x</span>`;
+}
+
+async function loadCurriculum() {
+    const r = await fetch('./data/cogsci198_curriculum.json');
+    curriculum = await r.json();
+    const box = document.getElementById('modulesContainer');
+    box.innerHTML = '';
+    curriculum.modules.forEach((m) => {
+        const isDone = Boolean(state.done[m.id]);
+        const div = document.createElement('div');
+        div.className = 'mod-card' + (isDone ? ' done' : '');
+        div.innerHTML = `
+            <div>
+                <div class="sess-tag">${m.session}</div>
+                <h3 style="font-family:'Sora',sans-serif;font-size:1.08rem;margin:0.3rem 0 0.5rem;color:#fff;">${m.title}</h3>
+                <p style="font-size:0.86rem;color:var(--text-secondary);">${m.summary}</p>
+                <div class="quest-box"><strong>UniSchool Quest:</strong> ${m.unischool_quest}</div>
+                <textarea rows="2" placeholder="${m.deliverable_prompt}" data-mid="${m.id}">${state.notes[m.id] || ''}</textarea>
+            </div>
+            <label style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#4ade80;cursor:pointer;margin-top:0.35rem;">
+                <input type="checkbox" ${isDone ? 'checked' : ''} data-chk="${m.id}" style="width:auto;margin:0;accent-color:#4ade80;">
+                Mark ${m.session} Artifact Complete
+            </label>
+        `;
+        box.appendChild(div);
+    });
+
+    box.querySelectorAll('textarea').forEach((ta) => {
+        ta.addEventListener('input', () => {
+            state.notes[ta.dataset.mid] = ta.value;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        });
+    });
+    box.querySelectorAll('input[type="checkbox"]').forEach((ck) => {
+        ck.addEventListener('change', () => {
+            state.done[ck.dataset.chk] = ck.checked;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+            loadCurriculum();
+        });
+    });
+    recalcScore();
+}
+
+async function submitForMentorReview() {
+    if (!state.email || !state.email.includes('berkeley.edu')) {
+        alert('Please save your @berkeley.edu Startup Profile in Card 1 first.');
+        return;
+    }
+    const score = recalcScore();
+    const msg = document.getElementById('mentorMsg');
+    msg.textContent = 'Submitting workspace snapshot to BASICS coaching team...';
+    await fetch('https://formsubmit.co/ajax/mikejacobs@berkeley.edu', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+            _subject: `[BASICS COGSCI 198 WORKSPACE — ${score}/100] ${state.startup || state.email}`,
+            _cc: 'michaelsamsonjacobs@gmail.com',
+            Founder_Email: state.email,
+            Startup_Name: state.startup,
+            Venture_Thesis: state.thesis,
+            Ready_Gate_Score: `${score}/100`,
+            Completed_Sessions_JSON: JSON.stringify(state.notes),
+        }),
+    });
+    msg.textContent = `✓ Sent to Mike & BASICS Mentors (${score}/100 Ready-Gate)!`;
+}
+
+runSims();
+loadCurriculum();
+</script>
+</body>
+</html>
